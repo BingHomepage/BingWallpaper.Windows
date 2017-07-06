@@ -9,6 +9,8 @@ Fetches and applies the image of the day from Bing as the wallpaper for Windows.
 	If deleted, download again (http://muzzammil.xyz/git/bing/BingWallpaper.zip). 
 	If moved, just run the program again.
 # [Example For BingHomepageAPI](https://github.com/muhammadmuzzammil1998/BingHomepageAPI)
+# For Ubuntu (Linux)
+  [See my friend's repo.](https://github.com/nabeelomer/BingWallpapers)
 # License
 Licensed under MIT License by (c) Muhammad Muzzammil 2017 (http://muzzammil.xyz/)
 Permission is hereby granted, free of charge, to any person obtaining a copy of this 
