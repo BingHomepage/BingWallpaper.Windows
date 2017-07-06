@@ -1,5 +1,13 @@
 # BingWallpaper
 Fetches and applies the image of the day from Bing as the wallpaper for Windows.
+# [Download For Usage (.exe)](http://muzzammil.xyz/git/bing/BingWallpaper.zip)
+# Step 1
+  [Download](http://muzzammil.xyz/git/bing/BingWallpaper.zip) and extract the files in a safe directory, i.e., where they won't be moved or deleted. 
+# Step 2
+  Run the "BingWallpaper.exe". (If possible, run as admin.)
+  
+	If deleted, download again (http://muzzammil.xyz/git/bing/BingWallpaper.zip). 
+	If moved, just run the program again.
 # [Example For BingHomepageAPI](https://github.com/muhammadmuzzammil1998/BingHomepageAPI)
 # License
 Licensed under MIT License by (c) Muhammad Muzzammil 2017 (http://muzzammil.xyz/)
