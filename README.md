@@ -1,6 +1,6 @@
 # BingWallpaper
 Fetches and applies the image of the day from Bing as the wallpaper for Windows.
-# [Example For BingHomepageAPI] (https://github.com/muhammadmuzzammil1998/BingHomepageAPI)
+# [Example For BingHomepageAPI](https://github.com/muhammadmuzzammil1998/BingHomepageAPI)
 # License
 Licensed under MIT License by (c) Muhammad Muzzammil 2017 (http://muzzammil.xyz/)
 Permission is hereby granted, free of charge, to any person obtaining a copy of this 
