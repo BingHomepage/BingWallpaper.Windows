@@ -3,7 +3,7 @@
 Fetches and applies the image of the day from Bing as the wallpaper for Windows.
 
 ## Running
-### Step 1: Download the release binary from releases page.
+### Step 1: [Download the release binary from releases page](https://github.com/muhammadmuzzammil1998/BingWallpaper/releases).
 ### Step 2: Extract files to a safe place and do not delete the files.
 ### Troubleshooting
 Execute this in either PowerShell or Command Prompt and run the app again.
