@@ -33,7 +33,7 @@ using System.Diagnostics;
 
 namespace BingWallpaper {
     class Program {
-        //Also requires BingHomepageAPI.dll (cdn.muzzammil.xyz/bing)
+        //Also requires BingHomepageAPI.dll (git.muzzammil.xyz/bing)
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
         static void Main(string[] args) {
