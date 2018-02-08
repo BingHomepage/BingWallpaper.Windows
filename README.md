@@ -1,5 +1,5 @@
 
-# BingWallpaper
+# BingWallpaper [![Build status](https://ci.appveyor.com/api/projects/status/xjgr7vadeh42xc4l?svg=true)](https://ci.appveyor.com/project/muhammadmuzzammil1998/bingwallpaper)
 Fetches and applies the image of the day from Bing as the wallpaper for Windows.
 
 ## Running
