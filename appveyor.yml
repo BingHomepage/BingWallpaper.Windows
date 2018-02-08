@@ -1,0 +1,11 @@
+version: '1.0.{build}'
+image: Visual Studio 2017
+build:
+  verbosity: minimal
+notifications:
+- provider: Email
+  to:
+  - email@muzzammil.xyz
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true
