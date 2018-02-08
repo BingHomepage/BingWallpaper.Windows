@@ -1,18 +1,43 @@
+
 # BingWallpaper
 Fetches and applies the image of the day from Bing as the wallpaper for Windows.
-# [Download For Usage (.exe)](https://git.muzzammil.xyz/bing/BingWallpaper.zip)
-# Step 1
-  [Download](https://git.muzzammil.xyz/bing/BingWallpaper.zip) and extract the files in a safe directory, i.e., where they won't be moved or deleted. 
-# Step 2
-  Run the "BingWallpaper.exe". (If possible, run as admin.)
-  
-	If deleted, download again (http://git.muzzammil.xyz/bing/BingWallpaper.zip). 
-	If moved, just run the program again.
-# [Example For BingHomepageAPI](https://github.com/muhammadmuzzammil1998/BingHomepageAPI)
-# For Ubuntu (Linux)
-  [See my friend's repo.](https://github.com/nabeelomer/BingWallpapers)
-# License
+
+## Running
+### Download the release binary from releases page.
+### Extract files to a safe place and do not delete the files.
+### Troubleshooting
+Execute this in either PowerShell or Command Prompt and run the app again.
+```
+schtasks.exe /delete /TN BingWallpaper
+```
+Still not fixed? [Contact me](https://github.com/muhammadmuzzammil1998/BingWallpaper/issues/new).
+
+## Building
+### Clone the repository
+```
+git clone https://github.com/muhammadmuzzammil1998/BingWallpaper.git
+cd BingWallpaper
+```
+### Open BingWallpaper.sln file
+### Add references to (skip if no error message is shown):
+- BingHomePageAPI
+- System
+- System.Linq
+- System.IO
+- System.Runtime.InteropServices
+- Microsoft.Win32
+- System.Windows.Forms
+- System.Threading
+- System.Diagnostics
+- System.Drawing
+### Build!
+Hit `F5` to start compiling and running the app.
+
+## [For macOS and Ubuntu](https://github.com/nabeelomer/BingWallpapers)
+
+## License
 Licensed under MIT License by (c) Muhammad Muzzammil 2017 (http://muzzammil.xyz/)
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of this 
 software and associated documentation files (the "Software"), to deal in the Software 
 without restriction, including without limitation the rights to use, copy, modify, 
