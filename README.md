@@ -3,8 +3,8 @@
 Fetches and applies the image of the day from Bing as the wallpaper for Windows.
 
 ## Running
-### Download the release binary from releases page.
-### Extract files to a safe place and do not delete the files.
+### Step 1: Download the release binary from releases page.
+### Step 2: Extract files to a safe place and do not delete the files.
 ### Troubleshooting
 Execute this in either PowerShell or Command Prompt and run the app again.
 ```
@@ -13,13 +13,13 @@ schtasks.exe /delete /TN BingWallpaper
 Still not fixed? [Contact me](https://github.com/muhammadmuzzammil1998/BingWallpaper/issues/new).
 
 ## Building
-### Clone the repository
+### Step 1: Clone the repository
 ```
 git clone https://github.com/muhammadmuzzammil1998/BingWallpaper.git
 cd BingWallpaper
 ```
-### Open BingWallpaper.sln file
-### Add references to (skip if no error message is shown):
+### Step 2: Open BingWallpaper.sln file
+### Step 3: Add references to (skip if no error message is shown):
 - BingHomePageAPI
 - System
 - System.Linq
@@ -30,7 +30,7 @@ cd BingWallpaper
 - System.Threading
 - System.Diagnostics
 - System.Drawing
-### Build!
+### Step 4: Build!
 Hit `F5` to start compiling and running the app.
 
 ## [For macOS and Ubuntu](https://github.com/nabeelomer/BingWallpapers)
