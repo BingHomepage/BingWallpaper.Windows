@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BingHomepageAPI</name>
+    </assembly>
+    <members>
+        <member name="T:BingHomepageAPI.BingHomepage">
+            <summary>
+            Gets the current Bing Homepage Details.
+            (c) Muhammad Muzzammil
+            (http://muzzammil.xyz/)
+            </summary>
+        </member>
+        <member name="M:BingHomepageAPI.BingHomepage.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the BingHomepageAPI.
+            </summary>
+            <param name="CountryCode">Country Code for which you want the image. Default: US.</param>
+        </member>
+        <member name="M:BingHomepageAPI.BingHomepage.#ctor">
+            <summary>
+            Initializes a new instance of the BingHomepageAPI.
+            </summary>
+        </member>
+        <member name="M:BingHomepageAPI.BingHomepage.GetImage(System.String)">
+            <summary>
+            Downloads, stores, and returns the current Homepage Image.
+            </summary>
+            <param name="path">Path to where the Image should be downloaded.</param>
+            <returns>Returns the downloaded image data.</returns>
+        </member>
+        <member name="P:BingHomepageAPI.BingHomepage.GetImageUrl">
+            <summary>
+            Gets the image's URL on bing's server.
+            </summary>
+        </member>
+        <member name="P:BingHomepageAPI.BingHomepage.GetCopyright">
+            <summary>
+            Gets the Copyright information of the image.
+            </summary>
+        </member>
+        <member name="P:BingHomepageAPI.BingHomepage.GetCopyrightLink">
+            <summary>
+            Gets the Copyright Link of the image.
+            </summary>
+        </member>
+    </members>
+</doc>
