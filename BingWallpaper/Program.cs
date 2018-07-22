@@ -21,49 +21,49 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 using System;
-using System.Linq;
-using System.IO;
-using System.Runtime.InteropServices;
-using Microsoft.Win32;
-using BingHomepageAPI;
-using System.Windows.Forms;
-using System.Threading;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Threading;
+using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace BingWallpaper {
-    class Program {
-        //Also requires BingHomepageAPI.dll (git.muzzammil.xyz/bing)
+    public class Program {
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
-        static void Main(string[] args) {
-            string
-                dir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"/Bing Wallpapers/",
-                path = dir + new Random().Next() + ".jpg";
+        private static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
+        private static void Main() {
+            string dir = $@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}/Bing Wallpapers/",
+                path = $"{dir}{new Random().Next()}.jpg";
             if (!Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
             new BingHomepage().GetImage(path).Dispose();
-            using (var key = Registry.CurrentUser.OpenSubKey(@"Control Panel\Desktop", true)) {
+            using (var key = Registry.CurrentUser.OpenSubKey(@"Control Panel\Desktop", true) ?? throw new NullReferenceException()) {
                 key.SetValue(@"WallpaperStyle", 2.ToString());
                 key.SetValue(@"TileWallpaper", 0.ToString());
-            };
+            }
+
             SystemParametersInfo(20, 0, path, 0x01 | 0x02);
             Thread.Sleep(1000 * 10); //Wait for 10 seconds.
             foreach (var file in new DirectoryInfo(dir).GetFiles("*", SearchOption.TopDirectoryOnly).Where(fi => fi.Name != Path.GetFileName(path)))
                 file.Delete();
             //Adding task to Task Scheduler to run the app for updating the wallpaper every 1 minute.
-            using (Process proc = new Process()) {
-                proc.StartInfo = new ProcessStartInfo() {
+            using (var proc = new Process()) {
+                proc.StartInfo = new ProcessStartInfo {
                     FileName = "schtasks.exe",
-                    Arguments = "/create /tn \"BingWallpaper\" /tr \"" + Application.ExecutablePath + "\" /sc MINUTE  /st 04:00",
+                    Arguments = $"/create /tn \"BingWallpaper\" /tr \"{Application.ExecutablePath}\" /sc MINUTE  /st 04:00",
                     UseShellExecute = false,
                     CreateNoWindow = true
                 };
                 proc.Start();
             }
+
             //Killing all tasks.
-            using (Process proc = new Process()) {
-                proc.StartInfo = new ProcessStartInfo() {
+            using (var proc = new Process()) {
+                proc.StartInfo = new ProcessStartInfo {
                     FileName = "taskkill",
                     Arguments = "/f /im schtasks.exe",
                     UseShellExecute = false,
@@ -71,6 +71,7 @@ namespace BingWallpaper {
                 };
                 proc.Start();
             }
+
             Environment.Exit(0);
         }
     }
