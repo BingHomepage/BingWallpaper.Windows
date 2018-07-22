@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BingHomepage</name>
+    </assembly>
+    <members>
+        <member name="T:BingHomepage">
+            <summary>
+                BingHomepage.CSharp library is powered by BingHomepageAPI which provides Bing's current homepage image details which include URL for image, Copyright information, and a Copyright link.
+            </summary>
+        </member>
+        <member name="M:BingHomepage.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the BingHomepageAPI.
+            </summary>
+            <param name="countryCode">Country Code for which you want the image. Default: US.</param>
+        </member>
+        <member name="M:BingHomepage.#ctor">
+            <summary>
+                Initializes a new instance of the BingHomepageAPI.
+            </summary>
+        </member>
+        <member name="P:BingHomepage.GetImageUrl">
+            <summary>
+                Gets the image's URL on bing's server.
+            </summary>
+        </member>
+        <member name="P:BingHomepage.GetCopyright">
+            <summary>
+                Gets the Copyright information of the image.
+            </summary>
+        </member>
+        <member name="P:BingHomepage.GetCopyrightLink">
+            <summary>
+                Gets the Copyright Link of the image.
+            </summary>
+        </member>
+        <member name="M:BingHomepage.GetImage(System.String)">
+            <summary>
+                Downloads, stores, and returns the current Homepage Image.
+            </summary>
+            <param name="path">Path to where the Image should be downloaded.</param>
+            <returns>Returns the downloaded image data.</returns>
+        </member>
+    </members>
+</doc>
