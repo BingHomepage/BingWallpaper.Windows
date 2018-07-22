@@ -27,8 +27,8 @@ BingWallpaper for windows uses [BingHomepage.CSharp](https://github.com/BingHome
 ### Step 1: Clone the repository
 
 ```batch
-git clone https://github.com/muhammadmuzzammil1998/BingWallpaper.git
-cd BingWallpaper
+git clone https://github.com/BingHomepage/BingWallpaper.Windows.git
+cd BingWallpaper.Windows
 ```
 
 ### Step 2: Open BingWallpaper.sln file
