@@ -55,8 +55,6 @@ namespace BingWallpaper {
         }
 
         private void Main_Load(object sender, EventArgs e) {
-            BingHomepage homepage = new BingHomepage();
-            imagePreview.Image = homepage.GetImage(Path.GetTempFileName());
         }
     }
 }
