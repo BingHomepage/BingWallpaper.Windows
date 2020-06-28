@@ -28,19 +28,19 @@ namespace BingWallpaper {
             if (!File.Exists(settingsFile)) {
                 File.WriteAllText(settingsFile, $"cc={defaultCC}");
             }
+            LoadSettings();
         }
         private void LoadSettings() {
-            CreateSettings();
             File.ReadAllLines(settingsFile).ToList().ForEach(x => {
                 var data = x.Split('=').Where(y=>y.Trim()!="").ToArray();
                 if (data.Length < 2) {
                     var result = MessageBox.Show("Settings might be corrupt. Reset them?", "Bing Wallpaper", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                     if (result == DialogResult.Yes) {
                         CreateSettings(true);
+                        return;
                     } else {
-                        throw new Exception("Corrupt settings. Exiting...");
+                        throw new Exception("Unable to fix corrupt settings.");
                     }
-                    return;
                 }
                 settings[data[0]] = data[1];
             });
@@ -48,7 +48,7 @@ namespace BingWallpaper {
         public Main() {
             InitializeComponent();
             try {
-                LoadSettings();
+                CreateSettings();
             } catch (Exception exp) {
                 MessageBox.Show(exp.Message, "Bing Wallpaper", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
