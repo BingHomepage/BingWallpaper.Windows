@@ -13,44 +13,62 @@ using System.Windows.Forms;
 
 namespace BingWallpaper {
     public partial class Main : Form {
-        private Dictionary<string, string> settings = new Dictionary<string, string>();
         private static readonly string directory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"Bing Wallpaper"),
             settingsFile=Path.Combine(directory, "settings.bw"),
             defaultCC = new RegionInfo(CultureInfo.CurrentCulture.LCID).Name;
+        private static Dictionary<string, string> settings = new Dictionary<string, string>(),
+            defaultSettings = new Dictionary<string, string>(){
+                {"cc", defaultCC },
+                {"applied","false" }
+            };
 
         private void CreateSettings(bool force = false) {
             if (force) {
+                LoadSettings(force);
                 File.Delete(settingsFile);
             }
             if (!Directory.Exists(directory)) {
                 Directory.CreateDirectory(directory);
             }
             if (!File.Exists(settingsFile)) {
-                File.WriteAllText(settingsFile, $"cc={defaultCC}");
+                defaultSettings.ToList().ForEach(x => {
+                    if (settings.ContainsKey(x.Key)) {
+                       File.AppendAllText(settingsFile, $"{x.Key}={settings[x.Key]??x.Value}\n");
+                        return;
+                    }
+                    File.AppendAllText(settingsFile, $"{x.Key}={x.Value}\n");
+                });
             }
             LoadSettings();
         }
-        private void LoadSettings() {
+
+        private void LoadSettings(bool forceRead=false) {
             File.ReadAllLines(settingsFile).ToList().ForEach(x => {
                 var data = x.Split('=').Where(y=>y.Trim()!="").ToArray();
                 if (data.Length < 2) {
-                    var result = MessageBox.Show("Settings might be corrupt. Reset them?", "Bing Wallpaper", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                    if (result == DialogResult.Yes) {
-                        CreateSettings(true);
-                        return;
-                    } else {
-                        throw new Exception("Unable to fix corrupt settings.");
+                    if (!forceRead) {
+                        throw new Exception("Invalid settings");
                     }
+                    data = new string[] {data[0],null};
                 }
                 settings[data[0]] = data[1];
             });
+            if (settings.Count < defaultSettings.Count && !forceRead) {
+                throw new Exception("Insufficient settings");
+            }
         }
         public Main() {
             InitializeComponent();
             try {
                 CreateSettings();
-            } catch (Exception exp) {
-                MessageBox.Show(exp.Message, "Bing Wallpaper", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } catch (Exception) {
+                var result = MessageBox.Show("Some settings might be corrupt. Attempt fixing them?", "Bing Wallpaper", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                if (result == DialogResult.Yes) {
+                    CreateSettings(true);
+                    return;
+                } else {
+                    throw new Exception("Unable to fix corrupt settings.");
+                }
             }
         }
 
