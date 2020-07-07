@@ -131,6 +131,7 @@ namespace BingWallpaper {
             CreateTask(settings["freq"]);
             settings["applied"] = "true";
             SaveSettings();
+            MessageBox.Show("Wallpaper applied and task successfully created!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         public static void CreateTask(string freq) {
             using (var proc = new Process()) {
@@ -175,6 +176,7 @@ namespace BingWallpaper {
             }
             settings["applied"] = "false";
             SaveSettings();
+            MessageBox.Show("Task successfully removed.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void SaveSettings() {
