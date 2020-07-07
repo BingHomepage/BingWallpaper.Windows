@@ -45,14 +45,15 @@ namespace BingWallpaper {
             LoadSettings();
         }
 
-        private void LoadSettings(bool forceRead=false) {
+        private void LoadSettings(bool forceRead = false) {
             File.ReadAllLines(settingsFile).ToList().ForEach(x => {
+                if (x.Length == 0) return;
                 var data = x.Split('=').Where(y=>y.Trim()!="").ToArray();
                 if (data.Length < 2) {
                     if (!forceRead) {
                         throw new Exception("Invalid settings");
                     }
-                    data = new string[] {data[0],null};
+                    data = new string[] { data[0], null };
                 }
                 settings[data[0]] = data[1];
             });
