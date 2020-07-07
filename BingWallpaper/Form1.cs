@@ -78,6 +78,12 @@ namespace BingWallpaper {
             }
         }
 
+        public void LoadImage(string cc) {
+            BingHomepage homepage = new BingHomepage(cc);
+            imagePreview.Image = homepage.GetImage(Path.GetTempFileName());
+            InfoLabel.Text = homepage.GetCopyright;
+        }
+
         public Main() {
             InitializeComponent();
             try {
@@ -94,6 +100,8 @@ namespace BingWallpaper {
         }
 
         private void Main_Load(object sender, EventArgs e) {
+            InitializeSettings();
+            LoadImage(settings["cc"]);
         }
     }
 }
