@@ -218,6 +218,7 @@
             this.ResetTaskButton.TabIndex = 5;
             this.ResetTaskButton.Text = "Reset task";
             this.ResetTaskButton.UseVisualStyleBackColor = true;
+            this.ResetTaskButton.Click += new System.EventHandler(this.ResetTaskButton_Click);
             // 
             // AboutButton
             // 

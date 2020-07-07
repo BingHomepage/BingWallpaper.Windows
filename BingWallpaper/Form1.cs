@@ -163,11 +163,25 @@ namespace BingWallpaper {
             }
         }
 
+        private void ResetTaskButton_Click(object sender, EventArgs e) {
+            using (var proc = new Process()) {
+                proc.StartInfo = new ProcessStartInfo {
+                    FileName = "schtasks.exe",
+                    Arguments = "/delete /tn \"BingWallpaper\"",
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+                proc.Start();
+            }
+            settings["applied"] = "false";
+            SaveSettings();
+        }
+
         public void SaveSettings() {
             File.Delete(settingsFile);
             CreateSettings(true, settings);
             LoadSettings();
-            ApplyButton.Text = "Re-apply";
+            ApplyButton.Text = settings["applied"]=="true"?"Re-apply":"Apply";
         }
 
         public void LoadImage(string cc) {
