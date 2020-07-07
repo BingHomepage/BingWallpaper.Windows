@@ -18,9 +18,13 @@ namespace BingWallpaper {
             defaultCC = new RegionInfo(CultureInfo.CurrentCulture.LCID).Name;
         private static bool
             __FREQ_UPDATE = false;
+        private static string[]
+            __VALID_FITS= { "Fill","Fit","Stretch","Tile","Center","Span"};
+
         private static Dictionary<string, string> settings = new Dictionary<string, string>(),
             defaultSettings = new Dictionary<string, string>(){
                 {"fit", "stretch" },
+                {"fit", "Stretch" },
                 {"cc", defaultCC },
                 {"freq", "10" },
                 {"applied","false" },
@@ -104,11 +108,14 @@ namespace BingWallpaper {
             func();
             trigger = !trigger;
         }
+        private void FitBox_TextChanged(object sender, EventArgs e) {
+            if (!__VALID_FITS.Contains(FitBox.Text)) { return; }
+            settings["fit"] = FitBox.Text;
+        }
 
         public void InitializeSettings() {
-            string[] validFits = { "Fill","Fit","Stretch","Tile","Center","Span"};
             int freq=int.Parse(settings["freq"]);
-            if (!validFits.Contains(settings["fit"])) {
+            if (!__VALID_FITS.Contains(settings["fit"])) {
                 settings["fit"] = "Stretch";
             }
             FitBox.SelectedItem = settings["fit"];

@@ -106,6 +106,7 @@
             this.FitBox.Size = new System.Drawing.Size(182, 21);
             this.FitBox.TabIndex = 1;
             this.FitBox.Text = "Stretch";
+            this.FitBox.TextChanged += new System.EventHandler(this.FitBox_TextChanged);
             // 
             // groupBox1
             // 
