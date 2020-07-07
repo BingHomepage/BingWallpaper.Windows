@@ -113,6 +113,10 @@ namespace BingWallpaper {
             settings["fit"] = FitBox.Text;
         }
 
+        private void RefreshButton_Click(object sender, EventArgs e) {
+            LoadImage(settings["cc"]);
+        }
+
         public void InitializeSettings() {
             int freq=int.Parse(settings["freq"]);
             if (!__VALID_FITS.Contains(settings["fit"])) {
