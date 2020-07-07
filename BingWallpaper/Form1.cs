@@ -89,11 +89,13 @@ namespace BingWallpaper {
                 FreqTrack.TickFrequency = int.Parse(Math.Round(value * 0.10).ToString());
             }
             FreqTrack.Value = value;
+            settings["freq"] = value.ToString();
         }
 
         private void FreqTrack_Scroll(object sender, EventArgs e) {
             SwitchAndRun(ref __FREQ_UPDATE, () => {
                 FreqText.Text = FreqTrack.Value.ToString();
+                settings["freq"] = FreqText.Text;
             });
         }
 
