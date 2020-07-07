@@ -62,9 +62,11 @@ namespace BingWallpaper {
             }
         }
 
-        private void CCBox_TextChanged(object sender, EventArgs e) {
-            if (CCBox.Text.Length < 2 || CCBox.Text.Length > 2) return;
-            LoadImage(CCBox.Text);
+        private void CCBox_KeyUp(object sender, KeyEventArgs e) {
+            string cc = CCBox.Text;
+            int len = cc.Length;
+            if (len < 2 || len > 2 || e.KeyCode == Keys.Back) return;
+            LoadImage(cc);
         }
 
         public void InitializeSettings() {
