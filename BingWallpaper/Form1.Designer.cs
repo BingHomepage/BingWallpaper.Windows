@@ -181,10 +181,12 @@
             // 
             this.FreqTrack.Location = new System.Drawing.Point(9, 38);
             this.FreqTrack.Maximum = 30;
+            this.FreqTrack.Minimum = 1;
             this.FreqTrack.Name = "FreqTrack";
             this.FreqTrack.Size = new System.Drawing.Size(185, 45);
             this.FreqTrack.TabIndex = 3;
             this.FreqTrack.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.FreqTrack.Value = 1;
             this.FreqTrack.Scroll += new System.EventHandler(this.FreqTrack_Scroll);
             // 
             // label3
