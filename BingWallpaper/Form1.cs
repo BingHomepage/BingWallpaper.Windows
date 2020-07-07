@@ -31,8 +31,8 @@ namespace BingWallpaper {
                 {"battery", "true" },
             };
 
-        private void CreateSettings(bool force = false) {
-            if (force) {
+        private void CreateSettings(bool force = false, Dictionary<string, string> dSettings = null) {
+            if (force^dSettings!=null) {
                 LoadSettings(force);
                 File.Delete(settingsFile);
             }
@@ -40,7 +40,7 @@ namespace BingWallpaper {
                 Directory.CreateDirectory(directory);
             }
             if (!File.Exists(settingsFile)) {
-                defaultSettings.ToList().ForEach(x => {
+                (dSettings ?? defaultSettings).ToList().ForEach(x => {
                     if (settings.ContainsKey(x.Key)) {
                         File.AppendAllText(settingsFile, $"{x.Key}={settings[x.Key] ?? x.Value}\n");
                         return;
@@ -132,6 +132,13 @@ namespace BingWallpaper {
                 ApplyButton.Enabled = false;
                 ApplyButton.Text = "Applied";
             }
+        }
+
+        public void SaveSettings() {
+            File.Delete(settingsFile);
+            CreateSettings(true, settings);
+            LoadSettings();
+            ApplyButton.Text = "Re-apply";
         }
 
         public void LoadImage(string cc) {
