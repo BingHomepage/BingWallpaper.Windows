@@ -168,7 +168,7 @@ namespace BingWallpaper {
             using (var proc = new Process()) {
                 proc.StartInfo = new ProcessStartInfo {
                     FileName = "schtasks.exe",
-                    Arguments = "/delete /tn \"BingWallpaper\"",
+                    Arguments = "/delete /tn BingWallpaper /f",
                     UseShellExecute = false,
                     CreateNoWindow = true
                 };
