@@ -62,6 +62,11 @@ namespace BingWallpaper {
             }
         }
 
+        private void CCBox_TextChanged(object sender, EventArgs e) {
+            if (CCBox.Text.Length < 2 || CCBox.Text.Length > 2) return;
+            LoadImage(CCBox.Text);
+        }
+
         public void InitializeSettings() {
             string[] validFits = { "Fill","Fit","Stretch","Tile","Center","Span"};
             int freq=int.Parse(settings["freq"]) % 60;
