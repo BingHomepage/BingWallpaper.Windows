@@ -12,7 +12,7 @@ namespace BingWallpaper {
         private static readonly string SettingsFile = Path.Combine(Global.Directory, "settings.bw");
         private static Dictionary<string, string> _settings = new Dictionary<string, string>();
         private static readonly Dictionary<string, string> DefaultSettings = new Dictionary<string, string>() {
-                {"fit", "Stretch"},
+                {"style", "Stretch"},
                 {"cc", Global.CountryCode},
                 {"freq", "10"},
                 {"applied", "false"},
