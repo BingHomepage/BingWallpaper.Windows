@@ -16,6 +16,8 @@ namespace BingWallpaper {
         private static readonly string directory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"Bing Wallpaper"),
             settingsFile=Path.Combine(directory, "settings.bw"),
             defaultCC = new RegionInfo(CultureInfo.CurrentCulture.LCID).Name;
+        private static bool
+            __FREQ_UPDATE = false;
         private static Dictionary<string, string> settings = new Dictionary<string, string>(),
             defaultSettings = new Dictionary<string, string>(){
                 {"fit", "stretch" },
@@ -70,9 +72,40 @@ namespace BingWallpaper {
             settings["cc"] = cc;
         }
 
+        private void FreqText_TextChanged(object sender, EventArgs e) {
+            if (__FREQ_UPDATE) return;
+            int value;
+            if (!int.TryParse(FreqText.Text, out value)) {
+                return;
+            }
+            if (value < 1) {
+                value = 1;
+                FreqText.Text = value.ToString();
+            }
+            FreqTrack.Maximum = 30;
+            FreqTrack.TickFrequency = 1;
+            if (value > 30) {
+                FreqTrack.Maximum = value;
+                FreqTrack.TickFrequency = int.Parse(Math.Round(value * 0.10).ToString());
+            }
+            FreqTrack.Value = value;
+        }
+
+        private void FreqTrack_Scroll(object sender, EventArgs e) {
+            SwitchAndRun(ref __FREQ_UPDATE, () => {
+                FreqText.Text = FreqTrack.Value.ToString();
+            });
+        }
+
+        private void SwitchAndRun(ref bool trigger, Action func) {
+            trigger = !trigger;
+            func();
+            trigger = !trigger;
+        }
+
         public void InitializeSettings() {
             string[] validFits = { "Fill","Fit","Stretch","Tile","Center","Span"};
-            int freq=int.Parse(settings["freq"]) % 60;
+            int freq=int.Parse(settings["freq"]);
             if (!validFits.Contains(settings["fit"])) {
                 settings["fit"] = "Stretch";
             }

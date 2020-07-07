@@ -173,6 +173,7 @@
             this.FreqText.Name = "FreqText";
             this.FreqText.Size = new System.Drawing.Size(69, 20);
             this.FreqText.TabIndex = 4;
+            this.FreqText.TextChanged += new System.EventHandler(this.FreqText_TextChanged);
             // 
             // FreqTrack
             // 
@@ -182,6 +183,7 @@
             this.FreqTrack.Size = new System.Drawing.Size(185, 45);
             this.FreqTrack.TabIndex = 3;
             this.FreqTrack.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.FreqTrack.Scroll += new System.EventHandler(this.FreqTrack_Scroll);
             // 
             // label3
             // 
