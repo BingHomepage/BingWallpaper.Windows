@@ -18,8 +18,11 @@ namespace BingWallpaper {
             defaultCC = new RegionInfo(CultureInfo.CurrentCulture.LCID).Name;
         private static Dictionary<string, string> settings = new Dictionary<string, string>(),
             defaultSettings = new Dictionary<string, string>(){
+                {"fit", "stretch" },
                 {"cc", defaultCC },
-                {"applied","false" }
+                {"freq", "10" },
+                {"applied","false" },
+                {"battery", "true" },
             };
 
         private void CreateSettings(bool force = false) {
@@ -57,6 +60,24 @@ namespace BingWallpaper {
                 throw new Exception("Insufficient settings");
             }
         }
+
+        public void InitializeSettings() {
+            string[] validFits = { "Fill","Fit","Stretch","Tile","Center","Span"};
+            int freq=int.Parse(settings["freq"]) % 60;
+            if (!validFits.Contains(settings["fit"])) {
+                settings["fit"] = "Stretch";
+            }
+            FitBox.SelectedItem = settings["fit"];
+            CCBox.Text = settings["cc"];
+            FreqText.Text = freq.ToString();
+            FreqTrack.Value = freq;
+            BatteryRunCheckBox.Checked = bool.Parse(settings["battery"]);
+            if (settings["applied"] == "true") {
+                ApplyButton.Enabled = false;
+                ApplyButton.Text = "Applied";
+            }
+        }
+
         public Main() {
             InitializeComponent();
             try {
