@@ -67,6 +67,7 @@ namespace BingWallpaper {
             int len = cc.Length;
             if (len < 2 || len > 2 || e.KeyCode == Keys.Back) return;
             LoadImage(cc);
+            settings["cc"] = cc;
         }
 
         public void InitializeSettings() {
