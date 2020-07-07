@@ -14,6 +14,7 @@ namespace BingWallpaper {
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
+        private void ToggleApply() => ApplyButton.Text = Settings.Fetch("applied") == "true" ? "Re-apply" : "Apply";
 
         public Main() {
             InitializeComponent();
@@ -100,8 +101,6 @@ namespace BingWallpaper {
             MessageBox.Show("Wallpaper applied and task successfully created!", "Success!", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
-
-        private void ToggleApply() => ApplyButton.Text = Settings.Fetch("applied") == "true" ? "Re-apply" : "Apply";
 
         private static void CreateTask(string freq) {
             using (var proc = new Process()) {
