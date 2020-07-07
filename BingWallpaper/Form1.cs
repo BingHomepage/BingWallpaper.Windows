@@ -10,25 +10,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using Microsoft.Win32;
+using System.Diagnostics;
+using System.Net;
 
 namespace BingWallpaper {
     public partial class Main : Form {
         private static readonly string directory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"Bing Wallpaper"),
             settingsFile=Path.Combine(directory, "settings.bw"),
             defaultCC = new RegionInfo(CultureInfo.CurrentCulture.LCID).Name;
+        private static string imagePath;
         private static bool
             __FREQ_UPDATE = false;
-        private static string[]
-            __VALID_FITS= { "Fill","Fit","Stretch","Tile","Center","Span"};
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
 
         private static Dictionary<string, string> settings = new Dictionary<string, string>(),
             defaultSettings = new Dictionary<string, string>(){
-                {"fit", "stretch" },
                 {"fit", "Stretch" },
                 {"cc", defaultCC },
                 {"freq", "10" },
                 {"applied","false" },
                 {"battery", "true" },
+            },
+            wallpaperStyle= new Dictionary<string, string>(){
+                {"Fill", "10" },{"Fit", "6"}, {"Stretch", "2"}, { "Tile","0"},{"Center","0" },{ "Span","22"}
             };
 
         private void CreateSettings(bool force = false, Dictionary<string, string> dSettings = null) {
@@ -110,8 +118,30 @@ namespace BingWallpaper {
             trigger = !trigger;
         }
         private void FitBox_TextChanged(object sender, EventArgs e) {
-            if (!__VALID_FITS.Contains(FitBox.Text)) { return; }
+            if (!wallpaperStyle.Keys.ToArray().Contains(FitBox.Text)) { return; }
             settings["fit"] = FitBox.Text;
+        }
+
+        private void ApplyButton_Click(object sender, EventArgs e) {
+            using (RegistryKey registryKey = Registry.CurrentUser.OpenSubKey(@"Control Panel\Desktop", true)) {
+                registryKey.SetValue(@"WallpaperStyle", wallpaperStyle[settings["fit"]]);
+                registryKey.SetValue(@"TileWallpaper", (settings["fit"] == "Tile" ? "1" : "0"));
+            }
+            SystemParametersInfo(20, 0, imagePath, 0x01 | 0x02);
+            CreateTask(settings["freq"]);
+            settings["applied"] = "true";
+            SaveSettings();
+        }
+        public static void CreateTask(string freq) {
+            using (var proc = new Process()) {
+                proc.StartInfo = new ProcessStartInfo {
+                    FileName = "schtasks.exe",
+                    Arguments = $"/create /tn \"BingWallpaper\" /tr \"{Application.ExecutablePath}\" /sc MINUTE /mo ${freq} /st 04:00",
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+                proc.Start();
+            }
         }
 
         private void RefreshButton_Click(object sender, EventArgs e) {
@@ -119,8 +149,8 @@ namespace BingWallpaper {
         }
 
         public void InitializeSettings() {
-            if (!__VALID_FITS.Contains(settings["fit"])) {
             int freq=int.Parse(settings["freq"])%1440;
+            if (!wallpaperStyle.Keys.ToArray().Contains(settings["fit"])) {
                 settings["fit"] = "Stretch";
             }
             FitBox.SelectedItem = settings["fit"];
@@ -129,8 +159,7 @@ namespace BingWallpaper {
             FreqTrack.Value = freq;
             BatteryRunCheckBox.Checked = bool.Parse(settings["battery"]);
             if (settings["applied"] == "true") {
-                ApplyButton.Enabled = false;
-                ApplyButton.Text = "Applied";
+                ApplyButton.Text = "Re-apply";
             }
         }
 
@@ -143,7 +172,8 @@ namespace BingWallpaper {
 
         public void LoadImage(string cc) {
             BingHomepage homepage = new BingHomepage(cc);
-            imagePreview.Image = homepage.GetImage(Path.GetTempFileName());
+            imagePath = Path.Combine(directory, $"image-{new Random().Next()}.bw");
+            imagePreview.Image = homepage.GetImage(imagePath);
             InfoLabel.Text = homepage.GetCopyright;
         }
 
