@@ -137,7 +137,7 @@ namespace BingWallpaper {
             using (var proc = new Process()) {
                 proc.StartInfo = new ProcessStartInfo {
                     FileName = "schtasks.exe",
-                    Arguments = $"/create /tn \"BingWallpaper\" /tr \"{Application.ExecutablePath}\" /sc MINUTE /mo ${freq} /st 04:00",
+                    Arguments = $"/create /tn \"BingWallpaper\" /tr \"{Application.ExecutablePath}\" /sc MINUTE /mo {freq} /st 04:00",
                     UseShellExecute = false,
                     CreateNoWindow = true
                 };
