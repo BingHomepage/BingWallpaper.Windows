@@ -42,7 +42,7 @@ namespace BingWallpaper {
             if (!File.Exists(settingsFile)) {
                 defaultSettings.ToList().ForEach(x => {
                     if (settings.ContainsKey(x.Key)) {
-                       File.AppendAllText(settingsFile, $"{x.Key}={settings[x.Key]??x.Value}\n");
+                        File.AppendAllText(settingsFile, $"{x.Key}={settings[x.Key] ?? x.Value}\n");
                         return;
                     }
                     File.AppendAllText(settingsFile, $"{x.Key}={x.Value}\n");
@@ -82,6 +82,7 @@ namespace BingWallpaper {
             if (!int.TryParse(FreqText.Text, out value)) {
                 return;
             }
+            value %= 1440;
             if (value < 1) {
                 value = 1;
                 FreqText.Text = value.ToString();
@@ -118,8 +119,8 @@ namespace BingWallpaper {
         }
 
         public void InitializeSettings() {
-            int freq=int.Parse(settings["freq"]);
             if (!__VALID_FITS.Contains(settings["fit"])) {
+            int freq=int.Parse(settings["freq"])%1440;
                 settings["fit"] = "Stretch";
             }
             FitBox.SelectedItem = settings["fit"];
