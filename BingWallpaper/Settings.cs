@@ -25,12 +25,13 @@ namespace BingWallpaper {
 
         public static void Set(string key, string value) => _settings[key] = value;
         public static void Set(string key, int value) => Set(key, value.ToString());
+        public static void Set(string key, bool state) => Set(key, state.ToString());
         public static void Set(string key, Control c) => Set(key, c.Text);
 
         private static void Load(bool forceRead = false) {
             File.ReadAllLines(SettingsFile).ToList().ForEach(x => {
                 if (x.Length == 0) return;
-                var data = x.Split('=').Where(y => y.Trim() != "").ToArray();
+                string[] data = x.Split('=').Where(y => y.Trim() != "").ToArray();
                 if (data.Length < 2) {
                     if (!forceRead) {
                         throw new Exception("Invalid settings");
