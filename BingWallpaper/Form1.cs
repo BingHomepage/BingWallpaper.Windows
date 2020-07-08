@@ -40,9 +40,7 @@ namespace BingWallpaper {
             FreqText.Text = freq.ToString();
             FreqTrack.Value = freq;
             BatteryRunCheckBox.Checked = bool.Parse(Settings.Fetch("battery"));
-            if (Settings.Fetch("applied") == "true") {
-                ApplyButton.Text = "Re-apply";
-            }
+            ToggleApply();
 
             LoadImage(Settings.Fetch("cc"));
         }
