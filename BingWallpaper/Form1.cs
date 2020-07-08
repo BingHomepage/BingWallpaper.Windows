@@ -38,7 +38,6 @@ namespace BingWallpaper {
             CCBox.Text = Settings.Fetch("cc");
             FreqText.Text = freq.ToString();
             FreqTrack.Value = freq;
-            BatteryRunCheckBox.Checked = bool.Parse(Settings.Fetch("battery"));
             ToggleApply();
 
             LoadImage(Settings.Fetch("cc"));
@@ -87,7 +86,6 @@ namespace BingWallpaper {
             Task.Create(Settings.Fetch("freq"));
             Task.Run();
             Settings.Set("applied", true);
-            Settings.Set("battery", BatteryRunCheckBox.Checked);
             Settings.Save();
             ToggleApply();
             MessageBox.Show("Wallpaper applied and task successfully created!", "Success!", MessageBoxButtons.OK,

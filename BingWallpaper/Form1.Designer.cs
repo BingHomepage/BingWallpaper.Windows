@@ -36,7 +36,6 @@
             this.CCBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BatteryRunCheckBox = new System.Windows.Forms.CheckBox();
             this.FreqText = new System.Windows.Forms.TextBox();
             this.FreqTrack = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
@@ -66,7 +65,7 @@
             // ApplyButton
             // 
             this.ApplyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ApplyButton.Location = new System.Drawing.Point(725, 250);
+            this.ApplyButton.Location = new System.Drawing.Point(725, 219);
             this.ApplyButton.Name = "ApplyButton";
             this.ApplyButton.Size = new System.Drawing.Size(97, 23);
             this.ApplyButton.TabIndex = 1;
@@ -149,26 +148,15 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.BatteryRunCheckBox);
             this.groupBox2.Controls.Add(this.FreqText);
             this.groupBox2.Controls.Add(this.FreqTrack);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(725, 126);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 118);
+            this.groupBox2.Size = new System.Drawing.Size(200, 87);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Task settings";
-            // 
-            // BatteryRunCheckBox
-            // 
-            this.BatteryRunCheckBox.AutoSize = true;
-            this.BatteryRunCheckBox.Location = new System.Drawing.Point(12, 89);
-            this.BatteryRunCheckBox.Name = "BatteryRunCheckBox";
-            this.BatteryRunCheckBox.Size = new System.Drawing.Size(146, 17);
-            this.BatteryRunCheckBox.TabIndex = 5;
-            this.BatteryRunCheckBox.Text = "Also run on battery power";
-            this.BatteryRunCheckBox.UseVisualStyleBackColor = true;
             // 
             // FreqText
             // 
@@ -202,7 +190,7 @@
             // RefreshButton
             // 
             this.RefreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RefreshButton.Location = new System.Drawing.Point(828, 279);
+            this.RefreshButton.Location = new System.Drawing.Point(828, 248);
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.Size = new System.Drawing.Size(97, 23);
             this.RefreshButton.TabIndex = 4;
@@ -213,7 +201,7 @@
             // ResetTaskButton
             // 
             this.ResetTaskButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ResetTaskButton.Location = new System.Drawing.Point(725, 279);
+            this.ResetTaskButton.Location = new System.Drawing.Point(725, 248);
             this.ResetTaskButton.Name = "ResetTaskButton";
             this.ResetTaskButton.Size = new System.Drawing.Size(97, 23);
             this.ResetTaskButton.TabIndex = 5;
@@ -224,7 +212,7 @@
             // AboutButton
             // 
             this.AboutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AboutButton.Location = new System.Drawing.Point(725, 308);
+            this.AboutButton.Location = new System.Drawing.Point(725, 277);
             this.AboutButton.Name = "AboutButton";
             this.AboutButton.Size = new System.Drawing.Size(200, 23);
             this.AboutButton.TabIndex = 6;
@@ -239,16 +227,16 @@
             this.InfoLabel.Cursor = System.Windows.Forms.Cursors.Help;
             this.InfoLabel.Enabled = false;
             this.InfoLabel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.InfoLabel.Location = new System.Drawing.Point(725, 337);
+            this.InfoLabel.Location = new System.Drawing.Point(725, 306);
             this.InfoLabel.Multiline = true;
             this.InfoLabel.Name = "InfoLabel";
-            this.InfoLabel.Size = new System.Drawing.Size(200, 57);
+            this.InfoLabel.Size = new System.Drawing.Size(200, 88);
             this.InfoLabel.TabIndex = 7;
             // 
             // ApplyOnce
             // 
             this.ApplyOnce.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ApplyOnce.Location = new System.Drawing.Point(828, 250);
+            this.ApplyOnce.Location = new System.Drawing.Point(828, 219);
             this.ApplyOnce.Name = "ApplyOnce";
             this.ApplyOnce.Size = new System.Drawing.Size(97, 23);
             this.ApplyOnce.TabIndex = 8;
@@ -299,7 +287,6 @@
         private System.Windows.Forms.TextBox FreqText;
         private System.Windows.Forms.TrackBar FreqTrack;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox BatteryRunCheckBox;
         private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.Button ResetTaskButton;
         private System.Windows.Forms.Button AboutButton;

@@ -15,7 +15,6 @@ namespace BingWallpaper {
             {"cc", new RegionInfo(CultureInfo.CurrentCulture.LCID).Name},
             {"freq", "10"},
             {"applied", "false"},
-            {"battery", "true"},
         };
 
         public static string Fetch(string key) {
