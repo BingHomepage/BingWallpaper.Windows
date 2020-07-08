@@ -14,6 +14,13 @@ namespace BingWallpaper {
         private static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
         private void ToggleApply() => ApplyButton.Text = Settings.Fetch("applied") == "true" ? "Re-apply" : "Apply";
 
+        private void LoadImage(string cc) {
+            BingHomepage homepage = new BingHomepage(cc);
+            Global.Image = Path.Combine(Global.Directory, $"image-{new Random().Next()}.bw");
+            imagePreview.Image = homepage.GetImage(Global.Image);
+            InfoLabel.Text = homepage.GetCopyright;
+        }
+
         public Main() {
             InitializeComponent();
             try {
@@ -130,14 +137,6 @@ namespace BingWallpaper {
             Settings.Save();
             ToggleApply();
             MessageBox.Show("Task successfully removed.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-
-        private void LoadImage(string cc) {
-            BingHomepage homepage = new BingHomepage(cc);
-            _imagePath = Path.Combine(Global.Directory, $"image-{new Random().Next()}.bw");
-            imagePreview.Image = homepage.GetImage(_imagePath);
-            InfoLabel.Text = homepage.GetCopyright;
         }
     }
 }
