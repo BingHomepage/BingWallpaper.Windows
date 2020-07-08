@@ -9,6 +9,8 @@ namespace BingWallpaper {
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 "Bing Wallpaper");
 
+        public static string Image { get; set; }
+
         public static Dictionary<string, string> WallpaperStyle => new Dictionary<string, string>() {
             {"Fill", "10"}, {"Fit", "6"}, {"Stretch", "2"}, {"Tile", "0"}, {"Center", "0"}, {"Span", "22"}
         };

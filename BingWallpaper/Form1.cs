@@ -8,8 +8,6 @@ using System.Diagnostics;
 
 namespace BingWallpaper {
     public partial class Main : Form {
-
-        private static string _imagePath;
         private static bool _freqUpdate;
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
