@@ -93,6 +93,7 @@
             "Span"});
             this.FitBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.FitBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.FitBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.FitBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.FitBox.FormattingEnabled = true;
             this.FitBox.Items.AddRange(new object[] {
@@ -125,6 +126,7 @@
             // 
             // CCBox
             // 
+            this.CCBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.CCBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CCBox.FormattingEnabled = true;
             this.CCBox.Items.AddRange(new object[] {
@@ -222,7 +224,7 @@
             // InfoLabel
             // 
             this.InfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.InfoLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.InfoLabel.BackColor = System.Drawing.Color.White;
             this.InfoLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.InfoLabel.Cursor = System.Windows.Forms.Cursors.Help;
             this.InfoLabel.Enabled = false;
@@ -248,6 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(934, 406);
             this.Controls.Add(this.ApplyOnce);
             this.Controls.Add(this.InfoLabel);
