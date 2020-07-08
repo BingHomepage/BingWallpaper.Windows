@@ -2,16 +2,10 @@
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using Microsoft.Win32;
-using System.Diagnostics;
 
 namespace BingWallpaper {
     public partial class Main : Form {
         private static bool _freqUpdate;
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        private static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
         private void ToggleApply() => ApplyButton.Text = Settings.Fetch("applied") == "true" ? "Re-apply" : "Apply";
 
         private void LoadImage(string cc) {
@@ -90,32 +84,14 @@ namespace BingWallpaper {
         }
 
         private void ApplyButton_Click(object sender, EventArgs e) {
-            using (var registryKey = Registry.CurrentUser.OpenSubKey(@"Control Panel\Desktop", true) ??
-                                     throw new Exception("Unable to find registry key.")) {
-                registryKey.SetValue(@"WallpaperStyle", Global.WallpaperStyle[Settings.Fetch("style")]);
-                registryKey.SetValue(@"TileWallpaper", (Settings.Fetch("style") == "Tile" ? "1" : "0"));
-            }
-
-            SystemParametersInfo(20, 0, _imagePath, 0x01 | 0x02);
-            CreateTask(Settings.Fetch("freq"));
-            Settings.Set("applied", "true");
+            Task.Create(Settings.Fetch("freq"));
+            Task.Run();
+            Settings.Set("applied", true);
+            Settings.Set("battery", BatteryRunCheckBox.Checked);
             Settings.Save();
             ToggleApply();
             MessageBox.Show("Wallpaper applied and task successfully created!", "Success!", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-        }
-
-        private static void CreateTask(string freq) {
-            using (var proc = new Process()) {
-                proc.StartInfo = new ProcessStartInfo {
-                    FileName = "schtasks.exe",
-                    Arguments =
-                        $"/create /tn \"BingWallpaper\" /tr \"{Application.ExecutablePath}\" /sc MINUTE /mo {freq} /st 04:00",
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
-                proc.Start();
-            }
         }
 
         private void RefreshButton_Click(object sender, EventArgs e) {
@@ -123,17 +99,8 @@ namespace BingWallpaper {
         }
 
         private void ResetTaskButton_Click(object sender, EventArgs e) {
-            using (var proc = new Process()) {
-                proc.StartInfo = new ProcessStartInfo {
-                    FileName = "schtasks.exe",
-                    Arguments = "/delete /tn BingWallpaper /f",
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
-                proc.Start();
-            }
-
-            Settings.Set("applied", "false");
+            Task.Delete();
+            Settings.Set("applied", false);
             Settings.Save();
             ToggleApply();
             MessageBox.Show("Task successfully removed.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
