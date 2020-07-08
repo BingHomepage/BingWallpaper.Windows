@@ -24,8 +24,7 @@ namespace BingWallpaper {
         }
 
         public static void Create(string freq) =>
-            TaskSch(
-                $"/create /tn BingWallpaper /tr \"{Application.ExecutablePath} -cli\" /sc MINUTE /mo {freq} /st 04:00",
+            TaskSch($"/create /tn BingWallpaper /tr \"{Application.ExecutablePath} -cli\" /sc MINUTE /mo {freq} /st 04:00",
                 () => {
                     Run();
                     Settings.Set("applied", true);
@@ -38,9 +37,11 @@ namespace BingWallpaper {
         });
 
         public static void Run() {
-            var homepage = new BingHomepage(Settings.Fetch("cc"));
-            Global.Image = Path.Combine(Global.Directory, $"image-{new Random().Next()}.bw");
-            homepage.GetImage(Global.Image);
+            if (Global.Image == null) {
+                var homepage = new BingHomepage(Settings.Fetch("cc"));
+                Global.Image = Path.Combine(Global.Directory, $"image-{new Random().Next()}.bw");
+                homepage.GetImage(Global.Image);
+            }
 
             using (var registryKey = Registry.CurrentUser.OpenSubKey(@"Control Panel\Desktop", true) ??
                                      throw new Exception("Unable to find registry key.")) {
@@ -49,6 +50,18 @@ namespace BingWallpaper {
             }
 
             SystemParametersInfo(20, 0, Global.Image, 0x01 | 0x02);
+
+            new DirectoryInfo(Global.Directory)
+                .GetFiles("image-*.bw", SearchOption.TopDirectoryOnly)
+                .ToList()
+                .ForEach(file => {
+                    try {
+                        File.Delete(file.FullName);
+                    }
+                    catch {
+                        // ignored
+                    }
+                });
         }
     }
 }
