@@ -44,6 +44,7 @@
             this.ResetTaskButton = new System.Windows.Forms.Button();
             this.AboutButton = new System.Windows.Forms.Button();
             this.InfoLabel = new System.Windows.Forms.TextBox();
+            this.ApplyOnce = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imagePreview)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -201,7 +202,7 @@
             // RefreshButton
             // 
             this.RefreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RefreshButton.Location = new System.Drawing.Point(828, 250);
+            this.RefreshButton.Location = new System.Drawing.Point(828, 279);
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.Size = new System.Drawing.Size(97, 23);
             this.RefreshButton.TabIndex = 4;
@@ -223,9 +224,9 @@
             // AboutButton
             // 
             this.AboutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AboutButton.Location = new System.Drawing.Point(828, 279);
+            this.AboutButton.Location = new System.Drawing.Point(725, 308);
             this.AboutButton.Name = "AboutButton";
-            this.AboutButton.Size = new System.Drawing.Size(97, 23);
+            this.AboutButton.Size = new System.Drawing.Size(200, 23);
             this.AboutButton.TabIndex = 6;
             this.AboutButton.Text = "About BW";
             this.AboutButton.UseVisualStyleBackColor = true;
@@ -238,17 +239,29 @@
             this.InfoLabel.Cursor = System.Windows.Forms.Cursors.Help;
             this.InfoLabel.Enabled = false;
             this.InfoLabel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.InfoLabel.Location = new System.Drawing.Point(725, 317);
+            this.InfoLabel.Location = new System.Drawing.Point(725, 337);
             this.InfoLabel.Multiline = true;
             this.InfoLabel.Name = "InfoLabel";
-            this.InfoLabel.Size = new System.Drawing.Size(200, 77);
+            this.InfoLabel.Size = new System.Drawing.Size(200, 57);
             this.InfoLabel.TabIndex = 7;
+            // 
+            // ApplyOnce
+            // 
+            this.ApplyOnce.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ApplyOnce.Location = new System.Drawing.Point(828, 250);
+            this.ApplyOnce.Name = "ApplyOnce";
+            this.ApplyOnce.Size = new System.Drawing.Size(97, 23);
+            this.ApplyOnce.TabIndex = 8;
+            this.ApplyOnce.Text = "Apply once";
+            this.ApplyOnce.UseVisualStyleBackColor = true;
+            this.ApplyOnce.Click += new System.EventHandler(this.ApplyOnce_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 406);
+            this.Controls.Add(this.ApplyOnce);
             this.Controls.Add(this.InfoLabel);
             this.Controls.Add(this.AboutButton);
             this.Controls.Add(this.ResetTaskButton);
@@ -291,6 +304,7 @@
         private System.Windows.Forms.Button ResetTaskButton;
         private System.Windows.Forms.Button AboutButton;
         private System.Windows.Forms.TextBox InfoLabel;
+        private System.Windows.Forms.Button ApplyOnce;
     }
 }
 

@@ -105,5 +105,9 @@ namespace BingWallpaper {
             ToggleApply();
             MessageBox.Show("Task successfully removed.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void ApplyOnce_Click(object sender, EventArgs e) {
+            Task.Run();
+        }
     }
 }
