@@ -20,10 +20,10 @@ namespace BingWallpaper {
             try {
                 Settings.Create();
             }
-            catch (Exception) {
+            catch (Exception exp) {
                 var result = MessageBox.Show("Some settings might be corrupt. Attempt fixing them?", "Bing Wallpaper",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                if (result != DialogResult.Yes) throw new Exception("Unable to fix corrupt settings.");
+                if (result != DialogResult.Yes) throw new Exception($"Unable to fix corrupt settings.\n{exp.Message}");
                 Settings.Create(true);
             }
         }
