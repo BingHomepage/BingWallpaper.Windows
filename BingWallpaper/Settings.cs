@@ -18,7 +18,11 @@ namespace BingWallpaper {
             {"battery", "true"},
         };
 
-        public static string Fetch(string key) => _settings[key];
+        public static string Fetch(string key) {
+            if (_settings.Count == 0) Create();
+            return !_settings.ContainsKey(key) ? null : _settings[key];
+        }
+
         public static void Set(string key, string value) => _settings[key] = value;
         public static void Set(string key, int value) => Set(key, value.ToString());
         public static void Set(string key, Control c) => Set(key, c.Text);
