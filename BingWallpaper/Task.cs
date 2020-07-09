@@ -34,7 +34,8 @@ namespace BingWallpaper {
         }
 
         public static void Create(string freq) =>
-            TaskSch($"/create /tn BingWallpaper /tr \"{Application.ExecutablePath} once\" /sc MINUTE /mo {freq} /st 04:00",
+            TaskSch(
+                $"/create /tn BingWallpaper /tr \"{Application.ExecutablePath} once\" /sc MINUTE /mo {freq} /st 04:00",
                 () => {
                     Run();
                     Settings.Set("applied", true);
