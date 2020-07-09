@@ -66,6 +66,7 @@
             // ApplyButton
             // 
             this.ApplyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ApplyButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ApplyButton.Location = new System.Drawing.Point(725, 219);
             this.ApplyButton.Name = "ApplyButton";
             this.ApplyButton.Size = new System.Drawing.Size(97, 23);
@@ -77,9 +78,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Choose a fit";
             // 
@@ -96,6 +98,7 @@
             this.FitBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.FitBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.FitBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.FitBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FitBox.FormattingEnabled = true;
             this.FitBox.Items.AddRange(new object[] {
             "Fill",
@@ -118,6 +121,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.FitBox);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(725, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 108);
@@ -129,6 +133,7 @@
             // 
             this.CCBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.CCBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CCBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CCBox.FormattingEnabled = true;
             this.CCBox.Items.AddRange(new object[] {
             "Default"});
@@ -142,9 +147,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(9, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Country Code";
             // 
@@ -154,6 +160,7 @@
             this.groupBox2.Controls.Add(this.FreqText);
             this.groupBox2.Controls.Add(this.FreqTrack);
             this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(725, 126);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 87);
@@ -163,9 +170,10 @@
             // 
             // FreqText
             // 
-            this.FreqText.Location = new System.Drawing.Point(125, 13);
+            this.FreqText.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FreqText.Location = new System.Drawing.Point(130, 13);
             this.FreqText.Name = "FreqText";
-            this.FreqText.Size = new System.Drawing.Size(69, 20);
+            this.FreqText.Size = new System.Drawing.Size(64, 22);
             this.FreqText.TabIndex = 4;
             this.FreqText.TextChanged += new System.EventHandler(this.FreqText_TextChanged);
             // 
@@ -184,15 +192,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(6, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 13);
+            this.label3.Size = new System.Drawing.Size(126, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Frequency (in minutes):";
             // 
             // RefreshButton
             // 
             this.RefreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RefreshButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RefreshButton.Location = new System.Drawing.Point(828, 248);
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.Size = new System.Drawing.Size(97, 23);
@@ -204,6 +214,7 @@
             // ResetTaskButton
             // 
             this.ResetTaskButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ResetTaskButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResetTaskButton.Location = new System.Drawing.Point(725, 248);
             this.ResetTaskButton.Name = "ResetTaskButton";
             this.ResetTaskButton.Size = new System.Drawing.Size(97, 23);
@@ -215,6 +226,7 @@
             // AboutButton
             // 
             this.AboutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AboutButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AboutButton.Location = new System.Drawing.Point(725, 277);
             this.AboutButton.Name = "AboutButton";
             this.AboutButton.Size = new System.Drawing.Size(200, 23);
@@ -229,6 +241,7 @@
             this.InfoLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.InfoLabel.Cursor = System.Windows.Forms.Cursors.Help;
             this.InfoLabel.Enabled = false;
+            this.InfoLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InfoLabel.ForeColor = System.Drawing.SystemColors.WindowText;
             this.InfoLabel.Location = new System.Drawing.Point(725, 306);
             this.InfoLabel.Multiline = true;
@@ -239,6 +252,7 @@
             // ApplyOnce
             // 
             this.ApplyOnce.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ApplyOnce.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ApplyOnce.Location = new System.Drawing.Point(828, 219);
             this.ApplyOnce.Name = "ApplyOnce";
             this.ApplyOnce.Size = new System.Drawing.Size(97, 23);
@@ -273,6 +287,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ApplyButton);
             this.Controls.Add(this.imagePreview);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimumSize = new System.Drawing.Size(950, 445);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
