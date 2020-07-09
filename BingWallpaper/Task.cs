@@ -11,29 +11,25 @@ namespace BingWallpaper {
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
 
-        private static void TaskSch(string arg, Action action) {
+        private static int Process(string cmd, string args) {
             int taskId;
-            using (var proc = new Process {
+            using (var process = new Process {
                 StartInfo = new ProcessStartInfo {
-                    FileName = "schtasks.exe",
-                    Arguments = arg,
+                    FileName = cmd,
+                    Arguments = args,
                     UseShellExecute = false,
                     CreateNoWindow = true
                 }
             }) {
-                proc.Start();
-                taskId = proc.Id;
+                process.Start();
+                taskId = process.Id;
             }
 
-            using (var proc = new Process {
-                StartInfo = new ProcessStartInfo {
-                    FileName = "taskkill",
-                    Arguments = $"/f /pid {taskId}",
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                }
-            }) proc.Start();
+            return taskId;
+        }
 
+        private static void TaskSch(string args, Action action) {
+            Process("taskkill", $"/f /pid {Process("schtasks", args)}");
             action();
         }
 
