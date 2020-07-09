@@ -52,7 +52,7 @@ namespace BingWallpaper {
             int len = cc.Length;
             if (len < 2 || len > 2 || e.KeyCode == Keys.Back) return;
             LoadImage(cc);
-            Settings.Set("cc", cc);
+            Settings.Set("cc", cc.ToUpper());
         }
 
         private void FreqText_TextChanged(object sender, EventArgs e) {
