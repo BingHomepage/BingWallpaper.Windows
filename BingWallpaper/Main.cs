@@ -111,5 +111,9 @@ namespace BingWallpaper {
         private void ApplyOnce_Click(object sender, EventArgs e) {
             Task.Run();
         }
+
+        private void AboutButton_Click(object sender, EventArgs e) {
+            new About().Show();
+        }
     }
 }

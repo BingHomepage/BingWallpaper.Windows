@@ -96,7 +96,7 @@
             "Span"});
             this.FitBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.FitBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.FitBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.FitBox.BackColor = System.Drawing.Color.White;
             this.FitBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.FitBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FitBox.FormattingEnabled = true;
@@ -131,7 +131,7 @@
             // 
             // CCBox
             // 
-            this.CCBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.CCBox.BackColor = System.Drawing.Color.White;
             this.CCBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CCBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CCBox.FormattingEnabled = true;
@@ -233,11 +233,12 @@
             this.AboutButton.TabIndex = 6;
             this.AboutButton.Text = "About BW";
             this.AboutButton.UseVisualStyleBackColor = true;
+            this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
             // 
             // InfoLabel
             // 
             this.InfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.InfoLabel.BackColor = System.Drawing.Color.White;
+            this.InfoLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(247)))));
             this.InfoLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.InfoLabel.Cursor = System.Windows.Forms.Cursors.Help;
             this.InfoLabel.Enabled = false;
@@ -275,7 +276,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(934, 406);
             this.Controls.Add(this.Loading);
             this.Controls.Add(this.ApplyOnce);
