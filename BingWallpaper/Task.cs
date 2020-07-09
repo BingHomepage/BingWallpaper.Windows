@@ -24,7 +24,7 @@ namespace BingWallpaper {
                 process.Start();
                 taskId = process.Id;
             }
-
+            Global.Log($"Started process (PID: {taskId}) {cmd} {args}");
             return taskId;
         }
 
@@ -68,9 +68,11 @@ namespace BingWallpaper {
                 .ForEach(file => {
                     try {
                         File.Delete(file.FullName);
+                        Global.Log($"Deleted {file.Name}");
                     }
                     catch {
                         // ignored
+                        Global.Log($"Unable to delete {file.Name}");
                     }
                 });
         }

@@ -15,6 +15,7 @@ namespace BingWallpaper {
             imagePreview.Image = homepage.GetImage(Global.Image);
             InfoLabel.Text = homepage.GetCopyright;
             Loading.Visible = false;
+            Global.Log($"Load image for {cc}");
         }
 
         public Main() {
@@ -31,6 +32,7 @@ namespace BingWallpaper {
         }
 
         private void Main_Load(object sender, EventArgs e) {
+            Global.Log("Started GUI instance");
             int freq = int.Parse(Settings.Fetch("freq")) % 1440;
             if (!Global.WallpaperStyleList.Contains(Settings.Fetch("style"))) {
                 Settings.Set("style", "Stretch");

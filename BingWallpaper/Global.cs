@@ -9,6 +9,8 @@ namespace BingWallpaper {
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 "Bing Wallpaper");
 
+        private static string LogFile => Path.Combine(Directory, "logs.bw");
+
         public static string Image { get; set; }
 
         public static Dictionary<string, string> WallpaperStyle => new Dictionary<string, string>() {
@@ -16,5 +18,9 @@ namespace BingWallpaper {
         };
 
         public static string[] WallpaperStyleList => WallpaperStyle.Keys.ToArray();
+
+        public static void Log(string evt) {
+            File.AppendAllText(LogFile, $"{DateTime.Now:h:mm:ss tt} {evt}\n");
+        }
     }
 }
