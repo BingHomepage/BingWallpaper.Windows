@@ -9,10 +9,12 @@ namespace BingWallpaper {
         private void ToggleApply() => ApplyButton.Text = Settings.Fetch("applied") == "true" ? "Re-apply" : "Apply";
 
         private void LoadImage(string cc) {
+            Loading.Visible = true;
             BingHomepage homepage = new BingHomepage(cc);
             Global.Image = Path.Combine(Global.Directory, $"image-{new Random().Next()}.bw");
             imagePreview.Image = homepage.GetImage(Global.Image);
             InfoLabel.Text = homepage.GetCopyright;
+            Loading.Visible = false;
         }
 
         public Main() {

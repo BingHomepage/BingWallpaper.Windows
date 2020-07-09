@@ -44,6 +44,7 @@
             this.AboutButton = new System.Windows.Forms.Button();
             this.InfoLabel = new System.Windows.Forms.TextBox();
             this.ApplyOnce = new System.Windows.Forms.Button();
+            this.Loading = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imagePreview)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -246,12 +247,23 @@
             this.ApplyOnce.UseVisualStyleBackColor = true;
             this.ApplyOnce.Click += new System.EventHandler(this.ApplyOnce_Click);
             // 
+            // Loading
+            // 
+            this.Loading.AutoSize = true;
+            this.Loading.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Loading.Location = new System.Drawing.Point(722, 373);
+            this.Loading.Name = "Loading";
+            this.Loading.Size = new System.Drawing.Size(102, 30);
+            this.Loading.TabIndex = 9;
+            this.Loading.Text = "Loading...";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(934, 406);
+            this.Controls.Add(this.Loading);
             this.Controls.Add(this.ApplyOnce);
             this.Controls.Add(this.InfoLabel);
             this.Controls.Add(this.AboutButton);
@@ -295,6 +307,7 @@
         private System.Windows.Forms.Button AboutButton;
         private System.Windows.Forms.TextBox InfoLabel;
         private System.Windows.Forms.Button ApplyOnce;
+        private System.Windows.Forms.Label Loading;
     }
 }
 
