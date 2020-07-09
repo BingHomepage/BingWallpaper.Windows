@@ -23,29 +23,19 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.Webpage = new System.Windows.Forms.Button();
+            this.Website = new System.Windows.Forms.Button();
+            this.SourceCode = new System.Windows.Forms.Button();
+            this.ClearLogs = new System.Windows.Forms.LinkLabel();
+            this.OpenLogs = new System.Windows.Forms.Button();
+            this.ReportIssue = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::BingWallpaper.Properties.Resources.Bing_Wallpaper;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -76,60 +66,60 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Applies Bing hompage image as wallpaper.";
             // 
-            // button1
+            // Webpage
             // 
-            this.button1.Location = new System.Drawing.Point(272, 155);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Webpage";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Webpage.Location = new System.Drawing.Point(272, 155);
+            this.Webpage.Name = "Webpage";
+            this.Webpage.Size = new System.Drawing.Size(118, 23);
+            this.Webpage.TabIndex = 4;
+            this.Webpage.Text = "Webpage";
+            this.Webpage.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // Website
             // 
-            this.button3.Location = new System.Drawing.Point(272, 214);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(242, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Developer\'s website";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Website.Location = new System.Drawing.Point(272, 214);
+            this.Website.Name = "Website";
+            this.Website.Size = new System.Drawing.Size(242, 23);
+            this.Website.TabIndex = 6;
+            this.Website.Text = "Developer\'s website";
+            this.Website.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // SourceCode
             // 
-            this.button2.Location = new System.Drawing.Point(396, 155);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Source code";
-            this.button2.UseVisualStyleBackColor = true;
+            this.SourceCode.Location = new System.Drawing.Point(396, 155);
+            this.SourceCode.Name = "SourceCode";
+            this.SourceCode.Size = new System.Drawing.Size(118, 23);
+            this.SourceCode.TabIndex = 7;
+            this.SourceCode.Text = "Source code";
+            this.SourceCode.UseVisualStyleBackColor = true;
             // 
-            // linkLabel1
+            // ClearLogs
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(454, 249);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(58, 13);
-            this.linkLabel1.TabIndex = 8;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Clear logs";
+            this.ClearLogs.AutoSize = true;
+            this.ClearLogs.Location = new System.Drawing.Point(454, 249);
+            this.ClearLogs.Name = "ClearLogs";
+            this.ClearLogs.Size = new System.Drawing.Size(58, 13);
+            this.ClearLogs.TabIndex = 8;
+            this.ClearLogs.TabStop = true;
+            this.ClearLogs.Text = "Clear logs";
             // 
-            // button4
+            // OpenLogs
             // 
-            this.button4.Location = new System.Drawing.Point(396, 185);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 23);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Open logs";
-            this.button4.UseVisualStyleBackColor = true;
+            this.OpenLogs.Location = new System.Drawing.Point(396, 185);
+            this.OpenLogs.Name = "OpenLogs";
+            this.OpenLogs.Size = new System.Drawing.Size(118, 23);
+            this.OpenLogs.TabIndex = 10;
+            this.OpenLogs.Text = "Open logs";
+            this.OpenLogs.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // ReportIssue
             // 
-            this.button5.Location = new System.Drawing.Point(272, 185);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(118, 23);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Report an issue";
-            this.button5.UseVisualStyleBackColor = true;
+            this.ReportIssue.Location = new System.Drawing.Point(272, 185);
+            this.ReportIssue.Name = "ReportIssue";
+            this.ReportIssue.Size = new System.Drawing.Size(118, 23);
+            this.ReportIssue.TabIndex = 9;
+            this.ReportIssue.Text = "Report an issue";
+            this.ReportIssue.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -140,6 +130,16 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "© Mohammad Muzammil Khan";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BingWallpaper.Properties.Resources.Bing_Wallpaper;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,12 +147,12 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(526, 276);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.OpenLogs);
+            this.Controls.Add(this.ReportIssue);
+            this.Controls.Add(this.ClearLogs);
+            this.Controls.Add(this.SourceCode);
+            this.Controls.Add(this.Website);
+            this.Controls.Add(this.Webpage);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -176,12 +176,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button Webpage;
+        private System.Windows.Forms.Button Website;
+        private System.Windows.Forms.Button SourceCode;
+        private System.Windows.Forms.LinkLabel ClearLogs;
+        private System.Windows.Forms.Button OpenLogs;
+        private System.Windows.Forms.Button ReportIssue;
         private System.Windows.Forms.Label label4;
     }
 }
