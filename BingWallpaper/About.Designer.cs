@@ -74,6 +74,7 @@
             this.Webpage.TabIndex = 4;
             this.Webpage.Text = "Webpage";
             this.Webpage.UseVisualStyleBackColor = true;
+            this.Webpage.Click += new System.EventHandler(this.Webpage_Click);
             // 
             // Website
             // 
@@ -83,6 +84,7 @@
             this.Website.TabIndex = 6;
             this.Website.Text = "Developer\'s website";
             this.Website.UseVisualStyleBackColor = true;
+            this.Website.Click += new System.EventHandler(this.Website_Click);
             // 
             // SourceCode
             // 
@@ -92,6 +94,7 @@
             this.SourceCode.TabIndex = 7;
             this.SourceCode.Text = "Source code";
             this.SourceCode.UseVisualStyleBackColor = true;
+            this.SourceCode.Click += new System.EventHandler(this.SourceCode_Click);
             // 
             // ClearLogs
             // 
@@ -102,6 +105,7 @@
             this.ClearLogs.TabIndex = 8;
             this.ClearLogs.TabStop = true;
             this.ClearLogs.Text = "Clear logs";
+            this.ClearLogs.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ClearLogs_LinkClicked);
             // 
             // OpenLogs
             // 
@@ -111,6 +115,7 @@
             this.OpenLogs.TabIndex = 10;
             this.OpenLogs.Text = "Open logs";
             this.OpenLogs.UseVisualStyleBackColor = true;
+            this.OpenLogs.Click += new System.EventHandler(this.OpenLogs_Click);
             // 
             // ReportIssue
             // 
@@ -120,6 +125,7 @@
             this.ReportIssue.TabIndex = 9;
             this.ReportIssue.Text = "Report an issue";
             this.ReportIssue.UseVisualStyleBackColor = true;
+            this.ReportIssue.Click += new System.EventHandler(this.ReportIssue_Click);
             // 
             // label4
             // 
