@@ -12,6 +12,7 @@ namespace BingWallpaper {
         private static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
 
         private static void TaskSch(string arg, Action action) {
+            int taskId;
             using (var proc = new Process {
                 StartInfo = new ProcessStartInfo {
                     FileName = "schtasks.exe",
@@ -19,7 +20,20 @@ namespace BingWallpaper {
                     UseShellExecute = false,
                     CreateNoWindow = true
                 }
+            }) {
+                proc.Start();
+                taskId = proc.Id;
+            }
+
+            using (var proc = new Process {
+                StartInfo = new ProcessStartInfo {
+                    FileName = "taskkill",
+                    Arguments = $"/f /pid {taskId}",
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                }
             }) proc.Start();
+
             action();
         }
 
