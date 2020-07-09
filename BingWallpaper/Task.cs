@@ -24,7 +24,7 @@ namespace BingWallpaper {
         }
 
         public static void Create(string freq) =>
-            TaskSch($"/create /tn BingWallpaper /tr \"{Application.ExecutablePath} -cli\" /sc MINUTE /mo {freq} /st 04:00",
+            TaskSch($"/create /tn BingWallpaper /tr \"{Application.ExecutablePath} once\" /sc MINUTE /mo {freq} /st 04:00",
                 () => {
                     Run();
                     Settings.Set("applied", true);
@@ -36,9 +36,9 @@ namespace BingWallpaper {
             Settings.Save();
         });
 
-        public static void Run() {
+        public static void Run(string cc = null) {
             if (Global.Image == null) {
-                var homepage = new BingHomepage(Settings.Fetch("cc"));
+                var homepage = new BingHomepage(cc ?? Settings.Fetch("cc"));
                 Global.Image = Path.Combine(Global.Directory, $"image-{new Random().Next()}.bw");
                 homepage.GetImage(Global.Image);
             }
