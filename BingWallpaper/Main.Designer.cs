@@ -250,7 +250,7 @@
             this.InfoLabel.Location = new System.Drawing.Point(725, 306);
             this.InfoLabel.Multiline = true;
             this.InfoLabel.Name = "InfoLabel";
-            this.InfoLabel.Size = new System.Drawing.Size(200, 88);
+            this.InfoLabel.Size = new System.Drawing.Size(200, 81);
             this.InfoLabel.TabIndex = 7;
             // 
             // ApplyOnce
@@ -282,7 +282,7 @@
             this.MMK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MMK.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MMK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(160)))), ((int)(((byte)(179)))));
-            this.MMK.Location = new System.Drawing.Point(831, 390);
+            this.MMK.Location = new System.Drawing.Point(828, 389);
             this.MMK.Name = "MMK";
             this.MMK.Size = new System.Drawing.Size(104, 15);
             this.MMK.TabIndex = 12;
