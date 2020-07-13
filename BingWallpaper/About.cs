@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BingWallpaper {
@@ -32,7 +25,8 @@ namespace BingWallpaper {
         }
 
         private void OpenLogs_Click(object sender, EventArgs e) {
-            Open(Global.LogFile);
+            if (File.Exists(Global.LogFile))
+                Open(Global.LogFile);
         }
 
         private void Website_Click(object sender, EventArgs e) {

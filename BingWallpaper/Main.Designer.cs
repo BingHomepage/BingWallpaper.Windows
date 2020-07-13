@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.imagePreview = new System.Windows.Forms.PictureBox();
             this.ApplyButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.InfoLabel = new System.Windows.Forms.TextBox();
             this.ApplyOnce = new System.Windows.Forms.Button();
             this.Loading = new System.Windows.Forms.Label();
+            this.MMK = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imagePreview)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -179,6 +181,7 @@
             // 
             // FreqTrack
             // 
+            this.FreqTrack.Cursor = System.Windows.Forms.Cursors.SizeWE;
             this.FreqTrack.Location = new System.Drawing.Point(9, 38);
             this.FreqTrack.Maximum = 30;
             this.FreqTrack.Minimum = 1;
@@ -231,7 +234,7 @@
             this.AboutButton.Name = "AboutButton";
             this.AboutButton.Size = new System.Drawing.Size(200, 23);
             this.AboutButton.TabIndex = 6;
-            this.AboutButton.Text = "About BW";
+            this.AboutButton.Text = "About Bing Wallpaper";
             this.AboutButton.UseVisualStyleBackColor = true;
             this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
             // 
@@ -272,12 +275,26 @@
             this.Loading.TabIndex = 9;
             this.Loading.Text = "Loading...";
             // 
+            // MMK
+            // 
+            this.MMK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.MMK.AutoSize = true;
+            this.MMK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MMK.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MMK.Location = new System.Drawing.Point(831, 390);
+            this.MMK.Name = "MMK";
+            this.MMK.Size = new System.Drawing.Size(104, 15);
+            this.MMK.TabIndex = 12;
+            this.MMK.Text = "{ } with ♥ by MMK";
+            this.MMK.Click += new System.EventHandler(this.MMK_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(934, 406);
+            this.Controls.Add(this.MMK);
             this.Controls.Add(this.Loading);
             this.Controls.Add(this.ApplyOnce);
             this.Controls.Add(this.InfoLabel);
@@ -289,6 +306,7 @@
             this.Controls.Add(this.ApplyButton);
             this.Controls.Add(this.imagePreview);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(950, 445);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -324,6 +342,7 @@
         private System.Windows.Forms.TextBox InfoLabel;
         private System.Windows.Forms.Button ApplyOnce;
         private System.Windows.Forms.Label Loading;
+        private System.Windows.Forms.Label MMK;
     }
 }
 

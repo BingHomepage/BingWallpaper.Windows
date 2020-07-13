@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -114,6 +115,10 @@ namespace BingWallpaper {
 
         private void AboutButton_Click(object sender, EventArgs e) {
             new About().Show();
+        }
+
+        private void MMK_Click(object sender, EventArgs e) {
+            Process.Start("https://muzzammil.xyz");
         }
     }
 }
