@@ -7,7 +7,7 @@
     <ProjectGuid>{606491B6-4806-483D-B5C0-834703974E1F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>BingWallpaper</RootNamespace>
-    <AssemblyName>BingWallpaper</AssemblyName>
+    <AssemblyName>Bing Wallpaper</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BingHomepage">
@@ -97,6 +100,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Bing Wallpaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
