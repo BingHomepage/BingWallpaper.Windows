@@ -281,6 +281,7 @@
             this.MMK.AutoSize = true;
             this.MMK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MMK.Font = new System.Drawing.Font("Segoe UI Emoji", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MMK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(160)))), ((int)(((byte)(179)))));
             this.MMK.Location = new System.Drawing.Point(831, 390);
             this.MMK.Name = "MMK";
             this.MMK.Size = new System.Drawing.Size(104, 15);
