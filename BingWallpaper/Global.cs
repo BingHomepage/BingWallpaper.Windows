@@ -20,7 +20,7 @@ namespace BingWallpaper {
         public static string[] WallpaperStyleList => WallpaperStyle.Keys.ToArray();
 
         public static void Log(string evt) {
-            File.AppendAllText(LogFile, $"{DateTime.Now:h:mm:ss tt} {evt}\n");
+            File.AppendAllText(LogFile, $"{DateTime.Now:G} - {evt}\n");
         }
     }
 }
