@@ -19,8 +19,6 @@ namespace BingWallpaper {
 
         public static string[] WallpaperStyleList => WallpaperStyle.Keys.ToArray();
 
-        public static void Log(string evt) {
-            File.AppendAllText(LogFile, $"{DateTime.Now:G} - {evt}\n");
-        }
+        public static void Log(string evt) => File.AppendAllText(LogFile, $"{DateTime.Now:G} - {evt}\n");
     }
 }

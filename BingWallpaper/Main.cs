@@ -118,7 +118,7 @@ namespace BingWallpaper {
         }
 
         private void MMK_Click(object sender, EventArgs e) {
-            Process.Start("https://muzzammil.xyz");
+            Process.Start("https://muzzammil.xyz?ref=BW");
         }
     }
 }

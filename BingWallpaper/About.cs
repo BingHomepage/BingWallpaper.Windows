@@ -30,7 +30,7 @@ namespace BingWallpaper {
         }
 
         private void Website_Click(object sender, EventArgs e) {
-            Open("https://muzzammil.xyz");
+            Open("https://muzzammil.xyz?ref=BW");
         }
 
         private void ClearLogs_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
