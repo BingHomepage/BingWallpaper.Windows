@@ -144,6 +144,7 @@
             this.CCBox.Size = new System.Drawing.Size(182, 21);
             this.CCBox.TabIndex = 3;
             this.CCBox.Text = "Default";
+            this.CCBox.TextUpdate += new System.EventHandler(this.CCBox_TextUpdate);
             this.CCBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CCBox_KeyUp);
             // 
             // label2

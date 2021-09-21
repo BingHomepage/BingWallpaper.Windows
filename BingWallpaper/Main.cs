@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -48,10 +49,18 @@ namespace BingWallpaper {
             LoadImage(Settings.Fetch("cc"));
         }
 
+        private void CCBox_TextUpdate(object sender, EventArgs e) => CCBox_KeyUp(sender, new KeyEventArgs(Keys.None));
+
         private void CCBox_KeyUp(object sender, KeyEventArgs e) {
-            string cc = CCBox.Text;
-            int len = cc.Length;
-            if (len < 2 || len > 2 || e.KeyCode == Keys.Back) return;
+            string cc = CCBox.Text.ToLower();
+            if (cc == "default") {
+                cc = new RegionInfo(CultureInfo.CurrentCulture.LCID).Name;
+            }
+            else {
+                int len = cc.Length;
+                if (len < 2 || len > 2 || e.KeyCode == Keys.Back) return;
+            }
+
             LoadImage(cc);
             Settings.Set("cc", cc.ToUpper());
         }
