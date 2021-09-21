@@ -9,7 +9,7 @@ namespace BingWallpaper {
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 "Bing Wallpaper");
 
-        public static string LogFile => Path.Combine(Directory, "logs.bw");
+        public static string LogFile => Path.Combine(Directory, "bw.log");
 
         public static string Image { get; set; }
 
