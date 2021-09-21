@@ -5,7 +5,7 @@
     Fetches and applies the image of the day from Bing as the wallpaper for Windows.
   </i>
   <br>
-  <img src="https://ci.appveyor.com/api/projects/status/huk5c0y25r4mrq10/branch/master?retina=true" alt="Build status"></img>
+  <a href="https://ci.appveyor.com/project/muhammadmuzzammil1998/bingwallpaper-windows" target="_blank"><img src="https://ci.appveyor.com/api/projects/status/huk5c0y25r4mrq10/branch/master?retina=true" alt="Build status"></img> </a>
 </center>
 
 ![Bing Wallpaper](./.github/images/BW.png)
