@@ -14,17 +14,17 @@
 
 ### Detailed steps
 
-Step 1: Download the latest build from [releases](https://github.com/BingHomepage/BingWallpaper.Windows/releases) page and extract the `.zip` to a safe location where these files will not be deleted accidentally. You can extract it to `%appdata%/../Local/Bing Wallpaper`.
+Step 1: Download the latest build from [releases](https://github.com/BingHomepage/BingWallpaper.Windows/releases) page.
 
-Step 2: Open the folder where you extracted the files. Right click `Bing Wallpaper.exe` to pin it to start and create a shortcut to desktop.
+Step 2: Extract and execute the installer.
 
-Step 3: Open `Bing Wallpaper.exe`. Ignore warnings and start the application.
+Step 3: Launch Bing Wallpaper (if doesn't start automatically).
 
 Step 4: Click on Apply and congratulations! Your wallpaper will now be updated to the image shown. Your country code will be inferred from your locale but you can enter a different one. Tweak around the settings to find your best fit.
 
 ### TL; DR
 
-Download from [releases](https://github.com/BingHomepage/BingWallpaper.Windows/releases) page. Extract to a safe location. Run `Bing Wallpaper.exe`. Apply.
+Download from [releases](https://github.com/BingHomepage/BingWallpaper.Windows/releases) page. Extract and install. Run `Bing Wallpaper`. Apply.
 
 ## Settings
 
